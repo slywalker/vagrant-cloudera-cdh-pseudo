@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   # using a specific IP.
   config.vm.network(:private_network, :ip => private_ip)
 
-  config.vm.provider "virtualbox" do |vb|
+  config.vm.provider :virtualbox do |vb|
     vb.customize(["modifyvm", :id, "--natdnshostresolver1", "off"  ])
     vb.customize(["modifyvm", :id, "--natdnsproxy1",        "off"  ])
     vb.customize(["modifyvm", :id, "--memory",              "1024" ])
@@ -38,7 +38,11 @@ Vagrant.configure("2") do |config|
   current_dir = File.dirname(__FILE__)
 
   config.vm.provision(:shell, :inline => "cp -rf /vagrant/install /home/vagrant/")
-  config.vm.provision(:shell, :inline => "chmod +x /home/vagrant/install/install.sh")
-  config.vm.provision(:shell, :inline => "/home/vagrant/install/install.sh")
+
+  config.vm.provision(:shell, :inline => "chmod +x /home/vagrant/install/cdh4.sh")
+  config.vm.provision(:shell, :inline => "/home/vagrant/install/cdh4.sh")
+
+  # config.vm.provision(:shell, :inline => "chmod +x /home/vagrant/install/cdh5.sh")
+  # config.vm.provision(:shell, :inline => "/home/vagrant/install/cdh5.sh")
 
 end

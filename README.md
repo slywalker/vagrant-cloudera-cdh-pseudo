@@ -1,5 +1,5 @@
-# Vagrant Cloudera CDH5 Pseudo
+# Vagrant Cloudera CDH Pseudo
 
-CDH5 with YARN on a Single Linux Node
+[Installing CDH4 with YARN on a Single Linux Node in Pseudo-distributed mode](http://www.cloudera.com/content/cloudera/en/home.html)
 
 [Installing CDH 5 with YARN on a Single Linux Node in Pseudo-distributed mode](https://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH5/latest/CDH5-Quick-Start/cdh5qs_topic_3_3.html)
