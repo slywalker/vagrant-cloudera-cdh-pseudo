@@ -48,5 +48,5 @@ sudo -u hdfs hadoop fs -chown vagrant /user
 sudo -u hdfs hadoop fs -mkdir /user/vagrant
 sudo -u hdfs hadoop fs -chown vagrant /user/vagrant
 
-echo "Install Hive"
-sudo apt-get install --yes hive
+echo "Install HiveServer2"
+sudo apt-get install --yes hive-server2

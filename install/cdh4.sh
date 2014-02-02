@@ -53,3 +53,7 @@ sudo -u hdfs hadoop fs -mkdir /user
 sudo -u hdfs hadoop fs -chown vagrant /user
 sudo -u hdfs hadoop fs -mkdir /user/vagrant
 sudo -u hdfs hadoop fs -chown vagrant /user/vagrant
+
+echo "Install HiveServer2"
+sudo apt-get install --yes hive-server2
+sudo echo "export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce" >> /etc/default/hive-server2
