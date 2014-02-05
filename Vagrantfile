@@ -31,18 +31,43 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder(".", "/vagrant",
-                          :owner => "vagrant",
-                          :group => "vagrant",
-                          :mount_options => ['dmode=777','fmode=777'])
+    :owner => "vagrant",
+    :group => "vagrant",
+    :mount_options => ['dmode=777','fmode=777']
+  )
 
   current_dir = File.dirname(__FILE__)
 
-  config.vm.provision(:shell, :inline => "cp -rf /vagrant/install /home/vagrant/")
+  config.vm.provision(
+    :shell,
+    :inline => "cp -rf /vagrant/install /home/vagrant/"
+  )
 
-  config.vm.provision(:shell, :inline => "chmod +x /home/vagrant/install/cdh4.sh")
-  config.vm.provision(:shell, :inline => "/home/vagrant/install/cdh4.sh")
+  config.vm.provision(
+    :shell,
+    :inline => "chmod +x /home/vagrant/install/cdh4/install.sh"
+  )
+  config.vm.provision(
+    :shell,
+    :inline => "/home/vagrant/install/cdh4/install.sh"
+  )
 
-  # config.vm.provision(:shell, :inline => "chmod +x /home/vagrant/install/cdh5.sh")
-  # config.vm.provision(:shell, :inline => "/home/vagrant/install/cdh5.sh")
+  # config.vm.provision(
+  #   :shell,
+  #   :inline => "chmod +x /home/vagrant/install/cdh5/install.sh"
+  # )
+  # config.vm.provision(
+  #   :shell,
+  #   :inline => "/home/vagrant/install/cdh5/install.sh"
+  # )
+
+  config.vm.provision(
+    :shell,
+    :inline => "chmod +x /home/vagrant/install/php55.sh"
+  )
+  config.vm.provision(
+    :shell,
+    :inline => "/home/vagrant/install/php55.sh"
+  )
 
 end
